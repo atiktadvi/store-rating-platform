@@ -1,6 +1,10 @@
 # Store Rating Platform
 
-A full-stack web application that enables users to browse stores, submit ratings, and manage feedback through a secure role-based system.
+A full-stack web application that allows users to discover stores, submit ratings, and manage feedback through a secure role-based access system.
+
+## Overview
+
+The Store Rating Platform provides a centralized system where users can rate stores on a scale of 1 to 5. The platform supports three different user roles: Administrator, Store Owner, and Normal User. Each role has access to specific features and dashboards.
 
 ## Tech Stack
 
@@ -28,45 +32,51 @@ A full-stack web application that enables users to browse stores, submit ratings
 
 ### Administrator
 
-* Manage users and stores
-* Add Admins, Store Owners, and Users
-* View and search users
-* View store listings
-* Dashboard with:
-
-  * Total Users
-  * Total Stores
-  * Total Ratings
+* Secure Login
+* Dashboard Overview
+* Add Users
+* Add Administrators
+* Add Store Owners
+* Add Stores
+* View All Users
+* Search and Sort Users
+* View User Details
+* View Store Listings
+* Change Password
+* Logout
 
 ### Normal User
 
-* Register and Login
-* Browse stores
-* Search stores
-* Submit ratings (1–5)
-* Update ratings
-* Change password
+* User Registration
+* Secure Login
+* Browse Stores
+* Search Stores
+* Submit Ratings (1–5)
+* Update Ratings
+* Change Password
+* Logout
 
 ### Store Owner
 
-* Login securely
-* View average store rating
-* View users who submitted ratings
-* Change password
+* Secure Login
+* View Store Rating Summary
+* View Users Who Submitted Ratings
+* Change Password
+* Logout
 
 ---
 
-## Features
+## Key Features
 
 * JWT Based Authentication
 * Role-Based Authorization
 * Protected Routes
-* Password Encryption using bcrypt
+* Secure Password Hashing
 * Store Search Functionality
 * Rating Management System
-* User Management
 * Dashboard Analytics
-* Responsive Interface
+* User Management
+* Responsive User Interface
 
 ---
 
@@ -83,8 +93,11 @@ store-rating-platform
 │   └── server.js
 │
 ├── frontend
-│   ├── src
 │   ├── public
+│   ├── src
+│   │   ├── components
+│   │   ├── pages
+│   │   └── services
 │   └── package.json
 │
 └── README.md
@@ -94,7 +107,7 @@ store-rating-platform
 
 ## Installation
 
-### Backend
+### Backend Setup
 
 ```bash
 cd backend
@@ -102,7 +115,7 @@ npm install
 npm start
 ```
 
-### Frontend
+### Frontend Setup
 
 ```bash
 cd frontend
@@ -110,7 +123,44 @@ npm install
 npm run dev
 ```
 
+---
 
+## Functional Modules
 
+### Authentication Module
 
+* Login
+* Registration
+* Password Management
+* JWT Token Verification
+
+### Store Management Module
+
+* Add Stores
+* View Stores
+* Search Stores
+* Store Rating Display
+
+### Rating Module
+
+* Submit Ratings
+* Update Ratings
+* Calculate Average Ratings
+
+### User Management Module
+
+* Add Users
+* View Users
+* Search Users
+* Sort Users
+* View User Details
+
+---
+
+## Security Features
+
+* Password Encryption using bcrypt
+* JWT Authentication
+* Protected API Routes
+* Role-Based Access Control
 
