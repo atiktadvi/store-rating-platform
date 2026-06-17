@@ -110,36 +110,7 @@ npm install
 npm run dev
 ```
 
----
 
-## Environment Variables
-
-Create a `.env` file inside the backend folder:
-
-```env
-PORT=5000
-JWT_SECRET=mysecretkey123
-```
-
----
-
-## Database Configuration
-
-Database connection is configured in:
-
-```text
-backend/config/db.js
-```
-
-Default Configuration:
-
-```javascript
-host: "127.0.0.1"
-port: 3307
-user: "root"
-password: ""
-database: "store_rating"
-```
 
 
 
