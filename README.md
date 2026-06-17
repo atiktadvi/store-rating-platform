@@ -1,6 +1,6 @@
 # Store Rating Platform
 
-A full-stack web application that allows users to register, log in, browse stores, and submit ratings. The platform supports role-based access for Administrators, Normal Users, and Store Owners.
+A full-stack web application that enables users to browse stores, submit ratings, and manage feedback through a secure role-based system.
 
 ## Tech Stack
 
@@ -24,81 +24,67 @@ A full-stack web application that allows users to register, log in, browse store
 
 ---
 
-## Features
+## User Roles
 
-### System Administrator
+### Administrator
 
-* Secure Login
-* Dashboard Overview
+* Manage users and stores
+* Add Admins, Store Owners, and Users
+* View and search users
+* View store listings
+* Dashboard with:
 
   * Total Users
   * Total Stores
   * Total Ratings
-* Add New Users
-* Add New Store Owners
-* Add New Administrators
-* Add New Stores
-* View All Users
-* Search Users
-* Sort Users
-* View User Details
-* View Store Listings
-* Change Password
-* Logout
 
 ### Normal User
 
-* User Registration
-* Secure Login
-* Browse Stores
-* Search Stores by Name
-* Search Stores by Address
-* View Overall Store Ratings
-* Submit Ratings (1–5)
-* Update Submitted Ratings
-* Change Password
-* Logout
+* Register and Login
+* Browse stores
+* Search stores
+* Submit ratings (1–5)
+* Update ratings
+* Change password
 
 ### Store Owner
 
-* Secure Login
-* View Store Average Rating
-* View Users Who Submitted Ratings
-* Change Password
-* Logout
+* Login securely
+* View average store rating
+* View users who submitted ratings
+* Change password
 
 ---
 
-## Authentication & Security
+## Features
 
 * JWT Based Authentication
-* Password Hashing using bcryptjs
 * Role-Based Authorization
 * Protected Routes
-* Secure Password Management
+* Password Encryption using bcrypt
+* Store Search Functionality
+* Rating Management System
+* User Management
+* Dashboard Analytics
+* Responsive Interface
 
 ---
 
 ## Project Structure
 
 ```text
-store-rating-app
+store-rating-platform
 │
 ├── backend
 │   ├── config
 │   ├── controllers
 │   ├── middleware
 │   ├── routes
-│   ├── server.js
-│   └── package.json
+│   └── server.js
 │
 ├── frontend
-│   ├── public
 │   ├── src
-│   │   ├── components
-│   │   ├── pages
-│   │   ├── services
-│   │   └── assets
+│   ├── public
 │   └── package.json
 │
 └── README.md
@@ -108,14 +94,7 @@ store-rating-app
 
 ## Installation
 
-### Clone Repository
-
-```bash
-git clone https://github.com/atiktadvi/store-rating-platform.git
-cd store-rating-platform
-```
-
-### Backend Setup
+### Backend
 
 ```bash
 cd backend
@@ -123,7 +102,7 @@ npm install
 npm start
 ```
 
-### Frontend Setup
+### Frontend
 
 ```bash
 cd frontend
@@ -139,42 +118,28 @@ Create a `.env` file inside the backend folder:
 
 ```env
 PORT=5000
-
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your_password
-DB_NAME=store_rating
-
-JWT_SECRET=your_secret_key
+JWT_SECRET=mysecretkey123
 ```
 
 ---
 
-## Database
+## Database Configuration
 
-Database Used: **MySQL**
+Database connection is configured in:
 
-Create a database:
-
-```sql
-CREATE DATABASE store_rating;
+```text
+backend/config/db.js
 ```
 
-Import the required tables and run the backend server.
+Default Configuration:
 
----
+```javascript
+host: "127.0.0.1"
+port: 3307
+user: "root"
+password: ""
+database: "store_rating"
+```
 
-## Validation Rules
-
-* Name: Minimum 20 characters, Maximum 60 characters
-* Address: Maximum 400 characters
-* Password:
-
-  * 8–16 characters
-  * At least one uppercase letter
-  * At least one special character
-* Email:
-
-  * Standard email format validation
 
 
